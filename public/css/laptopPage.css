@@ -1,0 +1,21 @@
+.laptop-header {
+    width: 100%;
+    text-align: center;
+    padding-top: 50px;
+}
+.laptop-img-cont {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 100px;
+}
+.laptop-desc {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 50px;
+    padding-bottom: 50px;
+}
+.desc-ul{
+    padding-top: 30px;
+
+}
