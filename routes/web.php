@@ -13,8 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::view('/', 'catalog')->name('main');
+Route::get('/', 'CatalogController@all')->name('main');
 Route::view('/laptop', 'laptopPage')->name('lapPage');
 Route::view('/login', 'Login')->name('login');
 Route::view('/createAccount', 'Account')->name('createAccount');
 Route::view('/admin', 'AdminPanel')->name('admin');
+Route::get('/{categoryParam}', 'CatalogController@categoryFilter')->name('category');
+

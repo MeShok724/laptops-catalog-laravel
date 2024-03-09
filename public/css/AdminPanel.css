@@ -66,6 +66,11 @@ main {
     padding: 5px 5px 5px 10px;
     width: 600px;
 }
+.btns {
+    width: 70%;
+    display: flex;
+    justify-content: space-around;
+}
 .btn-cont {
     padding: 20px 0 20px 0;
 }

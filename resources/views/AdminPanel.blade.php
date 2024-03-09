@@ -11,6 +11,31 @@
     </ul>
 </div>
 <div class="content-field">
+    <div class="content-field-laptop">
+        <div class="imgAndChoose">
+            <img class="laptop-img" src="" alt="Laptop image">
+            <input type="file" class="inpImg">
+        </div>
+        <div class="laptop-text-info">
+            <div class="laptop-name">
+                <input class="inp" value="">
+            </div>
+            <div class="laptop-desc">
+                <ul>
+                    <li class="inp-l"><input class="inp" value=''></li>
+                    <li class="inp-l"><input class="inp" value=""></li>
+                    <li class="inp-l"><input class="inp" value=""></li>
+                    <li class="inp-l"><input class="inp" value=""></li>
+                    <li class="inp-l"><input class="inp" value=""></li>
+                    <li class="inp-l"><input class="inp" value=""></li>
+                    <li class="inp-l"><input class="inp" value=""></li>
+                </ul>
+            </div>
+            <div class="btns">
+                <div class="btn-cont"><button class="btn">Add</button></div>
+            </div>
+        </div>
+    </div>
     @for($i = 0; $i<5; $i++)
     <div class="content-field-laptop">
             <div class="imgAndChoose">
@@ -32,7 +57,10 @@
                         <li class="inp-l"><input class="inp" value="battery 60 Wh"></li>
                     </ul>
                 </div>
-                <div class="btn-cont"><button class="btn">Save</button></div>
+                <div class="btns">
+                    <div class="btn-cont"><button class="btn">Save</button></div>
+                    <div class="btn-cont"><button class="btn">Delete</button></div>
+                </div>
             </div>
     </div>
     @endfor
