@@ -15,7 +15,7 @@
                     <img class="laptop-img" src="{{asset($laptop->image)}}" alt="Laptop image">
                     <div class="laptop-text-info">
                         <div class="laptop-name">
-                            <a class="black-text" href="{{route('lapPage')}}">{{$laptop->name}}</a>
+                            <a class="black-text" href="{{route('lapPage', $laptop->id)}}">{{$laptop->name}}</a>
                         </div>
                         <div class="laptop-desc">
                             <ul>
@@ -29,7 +29,7 @@
                             </ul>
                         </div>
                         <div class="laptop-under-desc">
-                            <a class="product-page-ref" href="{{route('lapPage')}}">Product page</a>
+                            <a class="product-page-ref" href="{{route('lapPage', $laptop->id)}}">Product page</a>
                         </div>
                     </div>
                 </div>

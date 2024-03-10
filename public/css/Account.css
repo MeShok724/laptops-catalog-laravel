@@ -33,13 +33,14 @@
 .but-reg{
     font-size: 16px;
     padding: 5px 10px 5px 10px;
-    border: 2px solid #373636;
-    border-radius: 3px;
+    /*border: 2px solid #373636;*/
+    /*border-radius: 3px;*/
 }
-.but-reg:hover {
-    background-color: #bdbdbd;
-}
+/*.but-reg:hover {*/
+/*    background-color: #bdbdbd;*/
+/*}*/
 .but-in{
+    color: blue;
     font-size: 16px;
     padding: 5px 10px 5px 10px;
 }

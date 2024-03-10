@@ -15,7 +15,18 @@
     <div class="menu-buttons">
         <input class="input-field" placeholder="Search...">
         <a href="{{route('main')}}" class="header-button">Home</a>
-        <a href="{{route('login')}}" class="header-button">My account</a>
+        @guest
+            @if (Route::has('register'))
+            <a href="{{route('log')}}" class="header-button">My account</a>
+            @endif
+        @else
+            <a href="{{ route('logout') }}" class="header-button"
+               onclick="event.preventDefault();
+               document.getElementById('logout-form').submit();">Logout</a>
+            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+                @csrf
+            </form>
+        @endguest
     </div>
 </header>
     @yield('bars')
