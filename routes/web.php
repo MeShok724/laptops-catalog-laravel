@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\Admin;
 
 /*
 |--------------------------------------------------------------------------
@@ -13,6 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+
 Route::get('/', 'CatalogController@all')->name('main');
 
 Route::get('/filtr/{categoryParam}', 'CatalogController@categoryFilter')->name('category');
@@ -23,6 +25,9 @@ Route::view('/log', 'Login')->name('log');
 Route::view('/createAccount', 'Account')->name('createAccount');
 
 Route::get('/admin', 'Admin@catalog')->name('admin');
-
+Route::post('/admin/create', 'Admin@create')->name('adminCreate');
+Route::post('/admin/{id}/update', 'Admin@update')->name('adminUpdate');
+Route::post('/admin/{id}/delete', 'Admin@delete')->name('adminDelete');
 Auth::routes();
-Route::get('/home', 'CatalogController@all')->name('home');
+
+
