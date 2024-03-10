@@ -14,13 +14,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'CatalogController@all')->name('main');
+
 Route::get('/filtr/{categoryParam}', 'CatalogController@categoryFilter')->name('category');
 Route::get('/laptop{laptopID}', 'CatalogController@lapPage')->name('lapPage');
+
 Route::get('/myacc', 'Account@myacc')->name('myacc');
 Route::view('/log', 'Login')->name('log');
 Route::view('/createAccount', 'Account')->name('createAccount');
-Route::view('/admin', 'AdminPanel')->name('admin');
+
+Route::get('/admin', 'Admin@catalog')->name('admin');
 
 Auth::routes();
-
 Route::get('/home', 'CatalogController@all')->name('home');

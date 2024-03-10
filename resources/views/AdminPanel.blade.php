@@ -12,58 +12,53 @@
 </div>
 <div class="content-field">
     <div class="content-field-laptop">
-        <div class="imgAndChoose">
-            <img class="laptop-img" src="" alt="Laptop image">
-            <input type="file" class="inpImg">
-        </div>
-        <div class="laptop-text-info">
+        <form class="form-add">
             <div class="laptop-name">
-                <input class="inp" value="">
+                <input class="inp" value="" name="name" placeholder="Name">
             </div>
             <div class="laptop-desc">
                 <ul>
-                    <li class="inp-l"><input class="inp" value=''></li>
-                    <li class="inp-l"><input class="inp" value=""></li>
-                    <li class="inp-l"><input class="inp" value=""></li>
-                    <li class="inp-l"><input class="inp" value=""></li>
-                    <li class="inp-l"><input class="inp" value=""></li>
-                    <li class="inp-l"><input class="inp" value=""></li>
-                    <li class="inp-l"><input class="inp" value=""></li>
+                    <li class="inp-l"><input class="inp" value="" name="image" placeholder="Image"></li>
+                    <li class="inp-l"><input class="inp" value="" name="screen" placeholder="Screen"></li>
+                    <li class="inp-l"><input class="inp" value="" name="processor" placeholder="Processor"></li>
+                    <li class="inp-l"><input class="inp" value="" name="ram" placeholder="Ram"></li>
+                    <li class="inp-l"><input class="inp" value="" name="rom" placeholder="Rom"></li>
+                    <li class="inp-l"><input class="inp" value="" name="video_card" placeholder="Video card"></li>
+                    <li class="inp-l"><input class="inp" value="" name="color" placeholder="Color"></li>
+                    <li class="inp-l"><input class="inp" value="" name="battery" placeholder="Battery"></li>
                 </ul>
             </div>
             <div class="btns">
                 <div class="btn-cont"><button class="btn">Add</button></div>
             </div>
-        </div>
+        </form>
     </div>
-    @for($i = 0; $i<5; $i++)
+    @foreach($laptops as $laptop)
     <div class="content-field-laptop">
-            <div class="imgAndChoose">
-                <img class="laptop-img" src="{{asset('images/lenovolegion5_1.jpeg')}}" alt="Laptop image">
-                <input type="file" class="inpImg">
+        <img class="laptop-img" src="{{asset($laptop->image)}}" alt="Laptop image">
+        <form class="laptop-text-info">
+            <div class="laptop-name">
+                <input class="inp" value="{{$laptop->name}}">
             </div>
-            <div class="laptop-text-info">
-                <div class="laptop-name">
-                    <input class="inp" value="Lenovo Legion 5 15ACH6">
-                </div>
-                <div class="laptop-desc">
-                    <ul>
-                        <li class="inp-l"><input class="inp" value='15.6" 2560 x 1440, IPS, 165 Hz'></li>
-                        <li class="inp-l"><input class="inp" value="AMD Ryzen 5 5600H"></li>
-                        <li class="inp-l"><input class="inp" value="16 GB DDR4"></li>
-                        <li class="inp-l"><input class="inp" value="SSD 1024 GB"></li>
-                        <li class="inp-l"><input class="inp" value="NVIDIA GeForce RTX 3050 Ti 4 GB Graphics Card (TDP 95 W)"></li>
-                        <li class="inp-l"><input class="inp" value="The color of the lid is dark blue"></li>
-                        <li class="inp-l"><input class="inp" value="battery 60 Wh"></li>
-                    </ul>
-                </div>
-                <div class="btns">
-                    <div class="btn-cont"><button class="btn">Save</button></div>
-                    <div class="btn-cont"><button class="btn">Delete</button></div>
-                </div>
+            <div class="laptop-desc">
+                <ul>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->image}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->screen}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->processor}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->ram}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->rom}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->video_card}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->color}}"></li>
+                    <li class="inp-l"><input class="inp" value="{{$laptop->battery}}"></li>
+                </ul>
             </div>
+            <div class="btns1">
+                <div class="btn-cont"><button class="btn">Save</button></div>
+                <div class="btn-cont"><button class="btn">Delete</button></div>
+            </div>
+        </form>
     </div>
-    @endfor
+    @endforeach
 </div>
 </main>
 </body>
