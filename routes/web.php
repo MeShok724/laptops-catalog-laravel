@@ -19,8 +19,10 @@ Route::get('/', 'CatalogController@all')->name('main');
 
 Route::get('/filtr/{categoryParam}', 'CatalogController@categoryFilter')->name('category');
 Route::get('/laptop{laptopID}', 'CatalogController@lapPage')->name('lapPage');
+Route::get('/search', 'CatalogController@search')->name('search');
 
 Route::get('/myacc', 'Account@myacc')->name('myacc');
+Route::get('/logout', 'Account@logout')->name('logout');
 Route::view('/log', 'Login')->name('log');
 Route::view('/createAccount', 'Account')->name('createAccount');
 
@@ -28,6 +30,8 @@ Route::get('/admin', 'Admin@catalog')->name('admin');
 Route::post('/admin/create', 'Admin@create')->name('adminCreate');
 Route::post('/admin/{id}/update', 'Admin@update')->name('adminUpdate');
 Route::post('/admin/{id}/delete', 'Admin@delete')->name('adminDelete');
+Route::get('/users/registration-dates', 'Admin@regDate')->name('regDate');
+
 Auth::routes();
 
 

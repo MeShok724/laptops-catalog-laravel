@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Title</title>
+    <title>Laptops catalog</title>
     <link rel="stylesheet" href="{{asset('css/bars.css')}}">
     <script src="https://kit.fontawesome.com/0cca381f7a.js" crossorigin="anonymous"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -13,19 +13,26 @@
 <header>
     <a href="{{route('main')}}"><h2 class="header-website">Laptops Catalog</h2></a>
     <div class="menu-buttons">
-        <input class="input-field" placeholder="Search...">
+        <form action="{{ route('search') }}" class="search-field" method="GET">
+            <input type="text" name="search" class="search-input" placeholder="Enter name...">
+            <button type="submit" class="search-btn">Search</button>
+        </form>
         <a href="{{route('main')}}" class="header-button">Home</a>
         @guest
-            @if (Route::has('register'))
+           @if (Route::has('register'))   {{--Если пользователь не авторизован--}}
             <a href="{{route('log')}}" class="header-button">My account</a>
             @endif
-        @else
-            <a href="{{ route('logout') }}" class="header-button"
-               onclick="event.preventDefault();
-               document.getElementById('logout-form').submit();">Logout</a>
-            <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
-                @csrf
-            </form>
+        @else   {{--Если пользователь авторизован--}}
+                @if (\Illuminate\Support\Facades\Auth::user()->admin == 1)
+                    <a href="{{route('admin')}}" class="header-button">Admin panel</a>
+                    <a href="{{route('regDate')}}" class="header-button">Calendar</a>
+                @endif
+            <div class="dropdown">
+                <a class="dropbtn">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
+                <div class="dropdown-content">
+                    <a href="{{route('logout')}}">Logout</a>
+                </div>
+            </div>
         @endguest
     </div>
 </header>
