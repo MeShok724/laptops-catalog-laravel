@@ -5,9 +5,9 @@
 <main>
 <div class="categories-fields">
     <ul>
-        <li><a href="#">Office laptops</a></li>
-        <li><a href="#">Gaming laptops</a></li>
-        <li><a href="#">Compact laptops</a></li>
+        <li><a href="{{route('adminCategory', 'Office laptops')}}">Office laptops</a></li>
+        <li><a href="{{route('adminCategory', 'Gaming laptops')}}">Gaming laptops</a></li>
+        <li><a href="{{route('adminCategory', 'Compact laptops')}}">Compact laptops</a></li>
     </ul>
 </div>
 <div class="content-field">
@@ -28,6 +28,10 @@
                     <li class="inp-l"><input class="inp" value="" name="video_card" placeholder="Video card"></li>
                     <li class="inp-l"><input class="inp" value="" name="color" placeholder="Color"></li>
                     <li class="inp-l"><input class="inp" value="" name="battery" placeholder="Battery"></li>
+                    <li class="inp-l"><div class="date">
+                            <p class="date-text">Release date:</p>
+                            <input type="date" class="date-inp" value="2024-03-24" min="1982-01-01" name="release_date">
+                        </div></li>
                 </ul>
             </div>
             <div class="btns">
@@ -55,6 +59,10 @@
                         <li class="inp-l"><input class="inp" name="video_card" value="{{$laptop->video_card}}"></li>
                         <li class="inp-l"><input class="inp" name="color"  value="{{$laptop->color}}"></li>
                         <li class="inp-l"><input class="inp" name="battery"  value="{{$laptop->battery}}"></li>
+                        <li class="inp-l"><div class="date">
+                                <p class="date-text">Release date:</p>
+                                <input type="date" class="date-inp" value="{{$laptop->release_date}}" min="1982-01-01" name="release_date">
+                            </div></li>
                     </ul>
                 </div>
                 <div class="btns1">
@@ -64,7 +72,7 @@
         </div>
         <form method="post" action="{{route('adminDelete', $laptop->id)}}">
             @csrf
-            <button class="btn-cont btn" type="submit">Delete</button>
+            <button class="btn-delete" type="submit">Delete</button>
         </form>
     </div>
     @endforeach

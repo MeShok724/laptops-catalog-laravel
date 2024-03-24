@@ -25,7 +25,6 @@
         @else   {{--Если пользователь авторизован--}}
                 @if (\Illuminate\Support\Facades\Auth::user()->admin == 1)
                     <a href="{{route('admin')}}" class="header-button">Admin panel</a>
-                    <a href="{{route('regDate')}}" class="header-button">Calendar</a>
                 @endif
             <div class="dropdown">
                 <a class="dropbtn">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>

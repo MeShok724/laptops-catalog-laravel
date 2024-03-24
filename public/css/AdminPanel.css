@@ -4,6 +4,7 @@ body {
 main {
     display: flex;
     width: 100%;
+    min-height: 67vh;
 }
 .categories-fields {
     width: 11%;
@@ -50,12 +51,15 @@ main {
     flex-direction: column;
     align-items: center;
 }
+.laptop-text-info{
+    width: 100%;
+}
 .laptop-name {
     font-size: 30px;
 }
 .laptop-desc {
     width: 100%;
-    padding-left: 25%;
+    padding-left: 15%;
     padding-top: 20px;
 }
 .inp-l {
@@ -65,12 +69,23 @@ main {
     padding: 5px 5px 5px 10px;
     width: 600px;
 }
+.date{
+    display: flex;
+    align-items: center;
+}
+.date-text{
+    padding-right: 15px;
+}
+.date-inp{
+    padding: 5px 5px 5px 10px;
+}
 .btns {
     width: 70%;
     display: flex;
     justify-content: space-around;
 }
 .btns1 {
+    width: 65%;
     display: flex;
     justify-content: space-around;
 }
@@ -80,4 +95,9 @@ main {
 .btn {
     padding: 10px;
     width: 100px;
+}
+.btn-delete{
+    width: 100px;
+    padding: 10px 0 10px 0;
+    margin-bottom: 15px;
 }

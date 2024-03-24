@@ -10,13 +10,14 @@
         <div>
             <h3 class="desc-header">Description</h3>
             <ul class="desc-ul">
-                <li>{{$laptop->screen}}</li>
-                <li>{{$laptop->processor}}</li>
-                <li>{{$laptop->ram}}</li>
-                <li>{{$laptop->rom}}</li>
-                <li>{{$laptop->video_card}}</li>
+                <li>Screen: {{$laptop->screen}}</li>
+                <li>Processor: {{$laptop->processor}}</li>
+                <li>RAM: {{$laptop->ram}}</li>
+                <li>ROM: {{$laptop->rom}}</li>
+                <li>Video card: {{$laptop->video_card}}</li>
                 <li>{{$laptop->color}}</li>
                 <li>{{$laptop->battery}}</li>
+                <li>Release date: {{$laptop->release_date}}</li>
             </ul>
         </div>
     </div>

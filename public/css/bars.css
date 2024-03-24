@@ -61,12 +61,12 @@ header {
     background-color: #373636;
     border-radius: 0 0 7px 7px;
 }
-/* Показать выпадающее меню при наведении курсора */
 .dropdown:hover .dropdown-content {display: block;}
 /*HEADER END*/
 
 /*FOOTER*/
 .footer {
+    margin-top: auto;
     width: 100%;
     background-color: #373636;
     color: white;
